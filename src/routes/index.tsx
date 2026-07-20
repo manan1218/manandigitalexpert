@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import introVideo from "@/assets/intro.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -238,13 +239,22 @@ function Index() {
           {/* Portrait/Video container */}
           <div className="lg:col-span-5">
             <div className="relative reveal" style={{ animationDelay: "220ms" }}>
-              <Placeholder
-                aspect="aspect-[9/16]"
-                label="Intro video / portrait"
-                hint="1080 × 1920 vertical. Drop your MP4 or portrait image into this container."
-              />
+              <div
+                className="relative w-full overflow-hidden rounded-lg border border-hairline bg-surface"
+                style={{ aspectRatio: "1080 / 1960" }}
+              >
+                <video
+                  src={introVideo.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
               <div className="absolute -bottom-4 -left-4 hidden rounded-md border border-hairline bg-surface-2 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted sm:block">
-                REEL / 00:42
+                REEL / INTRO
               </div>
             </div>
           </div>
