@@ -589,6 +589,8 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      <CaseStudyModal study={openStudy} onClose={() => setOpenStudy(null)} />
     </main>
   );
 }
