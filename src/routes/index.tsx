@@ -363,7 +363,8 @@ function Index() {
                   </a>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
