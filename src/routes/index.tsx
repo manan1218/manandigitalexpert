@@ -165,6 +165,7 @@ const impact = [
 
 /* ---------- Page ---------- */
 function Index() {
+  const [openStudy, setOpenStudy] = useState<CaseStudy | null>(null);
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
