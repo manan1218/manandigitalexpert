@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
-import cs1 from "@/assets/case-study-1.png.asset.json";
-import cs2 from "@/assets/case-study-2.png.asset.json";
-import cs3 from "@/assets/case-study-3.png.asset.json";
-import cs4 from "@/assets/case-study-4.png.asset.json";
-import cs5 from "@/assets/case-study-5.png.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
+import { CaseStudyModal } from "@/components/CaseStudyModal";
+import { caseStudies, type CaseStudy } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/")({
   component: Index,
