@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import introVideo from "@/assets/intro.mp4.asset.json";
+import cs1 from "@/assets/case-study-1.png.asset.json";
+import cs2 from "@/assets/case-study-2.png.asset.json";
+import cs3 from "@/assets/case-study-3.png.asset.json";
+import cs4 from "@/assets/case-study-4.png.asset.json";
+import cs5 from "@/assets/case-study-5.png.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 
 export const Route = createFileRoute("/")({
@@ -298,7 +303,9 @@ function Index() {
           <SectionLabel n="02 / Selected work" title="Case studies." />
 
           <div className="space-y-24">
-            {[1, 2, 3].map((n) => (
+            {[cs1, cs2, cs3, cs4, cs5].map((banner, idx) => {
+              const n = idx + 1;
+              return (
               <article
                 key={n}
                 className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12"
@@ -306,11 +313,14 @@ function Index() {
                 <div
                   className={`lg:col-span-7 ${n % 2 === 0 ? "lg:order-2" : ""}`}
                 >
-                  <Placeholder
-                    aspect="aspect-[16/10]"
-                    label={`Case study ${String(n).padStart(2, "0")} — banner`}
-                    hint="16:10 hero image or short looping video."
-                  />
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-hairline bg-surface">
+                    <img
+                      src={banner.url}
+                      alt={`Case study ${String(n).padStart(2, "0")} banner`}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 <div
                   className={`flex flex-col justify-center lg:col-span-5 ${
@@ -353,7 +363,8 @@ function Index() {
                   </a>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
