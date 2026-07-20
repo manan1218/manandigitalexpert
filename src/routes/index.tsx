@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
-import cs1 from "@/assets/case-study-1.png.asset.json";
-import cs2 from "@/assets/case-study-2.png.asset.json";
-import cs3 from "@/assets/case-study-3.png.asset.json";
-import cs4 from "@/assets/case-study-4.png.asset.json";
-import cs5 from "@/assets/case-study-5.png.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
+import { CaseStudyModal } from "@/components/CaseStudyModal";
+import { caseStudies, type CaseStudy } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -167,6 +165,7 @@ const impact = [
 
 /* ---------- Page ---------- */
 function Index() {
+  const [openStudy, setOpenStudy] = useState<CaseStudy | null>(null);
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -303,69 +302,94 @@ function Index() {
           <SectionLabel n="02 / Selected work" title="Case studies." />
 
           <div className="space-y-24">
-            {[cs1, cs2, cs3, cs4, cs5].map((banner, idx) => {
+            {caseStudies.map((study, idx) => {
               const n = idx + 1;
+              const flipped = n % 2 === 0;
               return (
-              <article
-                key={n}
-                className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12"
-              >
-                <div
-                  className={`lg:col-span-7 ${n % 2 === 0 ? "lg:order-2" : ""}`}
+                <article
+                  key={study.id}
+                  className="group grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-hairline bg-surface">
-                    <img
-                      src={banner.url}
-                      alt={`Case study ${String(n).padStart(2, "0")} banner`}
-                      className="absolute inset-0 h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <div
-                  className={`flex flex-col justify-center lg:col-span-5 ${
-                    n % 2 === 0 ? "lg:order-1" : ""
-                  }`}
-                >
-                  <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent">
-                    Case {String(n).padStart(2, "0")}
-                  </div>
-                  <h3 className="mt-4 font-display text-3xl leading-tight text-ink sm:text-4xl">
-                    [ Case study title goes here ]
-                  </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                    Short 2–3 line summary — the client, the challenge, and the
-                    outcome. Drop your write-up into this container. No
-                    metrics have been invented; add the real numbers when
-                    you're ready.
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-3 gap-3">
-                    {["Metric", "Metric", "Metric"].map((m, i) => (
-                      <div
-                        key={i}
-                        className="rounded-md border border-dashed border-hairline bg-surface p-3"
-                      >
-                        <div className="font-display text-xl text-ink">—</div>
-                        <div className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted">
-                          {m}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <a
-                    href="#contact"
-                    className="group mt-8 inline-flex items-center gap-2 self-start border-b border-hairline pb-1 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-accent hover:text-accent"
+                  <button
+                    type="button"
+                    onClick={() => setOpenStudy(study)}
+                    aria-label={`Open case study: ${study.title}`}
+                    className={`block lg:col-span-7 ${flipped ? "lg:order-2" : ""}`}
                   >
-                    Read the full study
-                    <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </a>
-                </div>
-              </article>
+                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-hairline bg-surface">
+                      <img
+                        src={study.banner}
+                        alt={`${study.title} banner`}
+                        className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-background/0 to-background/0 opacity-0 transition group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-background/85 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.24em] text-ink opacity-0 backdrop-blur transition group-hover:opacity-100">
+                        Open case study
+                        <ArrowUpRight className="h-3 w-3" />
+                      </div>
+                    </div>
+                  </button>
+                  <div
+                    className={`flex flex-col justify-center lg:col-span-5 ${
+                      flipped ? "lg:order-1" : ""
+                    }`}
+                  >
+                    <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent">
+                      Case {String(n).padStart(2, "0")} · {study.eyebrow}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setOpenStudy(study)}
+                      className="mt-4 text-left"
+                    >
+                      <h3 className="font-display text-3xl leading-tight text-ink transition group-hover:text-accent sm:text-4xl">
+                        {study.title}
+                      </h3>
+                    </button>
+                    <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+                      {study.summary}
+                    </p>
+
+                    <div className="mt-6 grid grid-cols-3 gap-3">
+                      {study.highlights.map((h) => (
+                        <div
+                          key={h.v}
+                          className="rounded-md border border-hairline bg-surface p-3"
+                        >
+                          <div className="font-display text-xl text-ink">{h.k}</div>
+                          <div className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted">
+                            {h.v}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {study.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-hairline px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-ink-muted"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setOpenStudy(study)}
+                      className="group/link mt-8 inline-flex items-center gap-2 self-start border-b border-hairline pb-1 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-accent hover:text-accent"
+                    >
+                      Read the full study
+                      <ArrowUpRight className="h-3.5 w-3.5 transition group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                    </button>
+                  </div>
+                </article>
               );
             })}
           </div>
+
         </div>
       </section>
 
@@ -565,6 +589,8 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      <CaseStudyModal study={openStudy} onClose={() => setOpenStudy(null)} />
     </main>
   );
 }
