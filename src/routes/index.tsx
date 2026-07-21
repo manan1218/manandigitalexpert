@@ -5,6 +5,7 @@ import introVideo from "@/assets/intro.mp4.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies";
+import { useSectionSync } from "@/components/GrowthFramework";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -166,6 +167,7 @@ const impact = [
 /* ---------- Page ---------- */
 function Index() {
   const [openStudy, setOpenStudy] = useState<CaseStudy | null>(null);
+  useSectionSync(["top", "impact", "work", "experience", "certifications", "contact"]);
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
