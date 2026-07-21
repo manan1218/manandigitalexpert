@@ -490,19 +490,6 @@ function Index() {
         </div>
       </section>
 
-      {/* GALLERY / PHOTOS */}
-      <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="06 / Behind the scenes" title="On the ground." />
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <Placeholder aspect="aspect-[3/4]" label="Photo 01" />
-            <Placeholder aspect="aspect-square" label="Photo 02" className="md:mt-16" />
-            <Placeholder aspect="aspect-[3/4]" label="Photo 03" />
-            <Placeholder aspect="aspect-square" label="Photo 04" className="md:mt-16" />
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT */}
       <section id="contact" className="relative overflow-hidden">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-32">
