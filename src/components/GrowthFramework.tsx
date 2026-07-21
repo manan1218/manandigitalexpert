@@ -225,11 +225,15 @@ export function useSectionSync(sectionIds: string[]) {
         entries.forEach((e) => {
           ratios.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0);
         });
-        let best: { id: string; r: number } | null = null;
+        let bestId: string | null = null;
+        let bestR = 0;
         ratios.forEach((r, id) => {
-          if (!best || r > best.r) best = { id, r };
+          if (r > bestR) {
+            bestR = r;
+            bestId = id;
+          }
         });
-        if (best && best.r > 0) setSection(best.id);
+        if (bestId && bestR > 0) setSection(bestId);
       },
       {
         // Trigger around the vertical middle of the viewport
