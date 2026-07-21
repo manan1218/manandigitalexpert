@@ -4,6 +4,7 @@ import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
+import { CoreContributions } from "@/components/CoreContributions";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies";
 import { useSectionSync } from "@/components/GrowthFramework";
 
