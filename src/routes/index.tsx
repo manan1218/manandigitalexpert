@@ -494,8 +494,8 @@ function Index() {
       <section id="contact" className="relative overflow-hidden">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-32">
           <div className="lg:col-span-7">
-            <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-              07 / Contact
+          <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
+              06 / Contact
             </div>
             <h2 className="mt-6 font-display text-5xl leading-[1] tracking-tight text-ink sm:text-7xl lg:text-[6rem]">
               Let's build the
