@@ -4,6 +4,7 @@ import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
+import { CoreContributions } from "@/components/CoreContributions";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies";
 import { useSectionSync } from "@/components/GrowthFramework";
 
@@ -402,12 +403,7 @@ function Index() {
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <Placeholder
-                aspect="aspect-[4/5]"
-                label="Portrait photo"
-                hint="Editorial portrait, ~1200 × 1500. Sticky on desktop."
-                className="lg:sticky lg:top-24"
-              />
+              <CoreContributions className="lg:sticky lg:top-24" />
             </div>
             <ol className="relative space-y-14 lg:col-span-8">
               {experience.map((e, idx) => (
