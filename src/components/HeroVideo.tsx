@@ -66,7 +66,7 @@ export function HeroVideo({ src }: { src: string }) {
   return (
     <div
       className="relative w-full overflow-hidden rounded-lg border border-hairline bg-surface group"
-      style={{ aspectRatio: "1080 / 1960" }}
+      style={{ aspectRatio: "1080 / 1600" }}
     >
       <video
         ref={ref}
@@ -78,6 +78,7 @@ export function HeroVideo({ src }: { src: string }) {
         preload="metadata"
         onClick={togglePlay}
         className="absolute inset-0 h-full w-full object-cover cursor-pointer"
+        style={{ objectPosition: "center 35%" }}
       />
 
       {/* Controls overlay */}
