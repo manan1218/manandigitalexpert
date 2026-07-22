@@ -78,7 +78,7 @@ export function HeroVideo({ src }: { src: string }) {
         preload="metadata"
         onClick={togglePlay}
         className="absolute inset-0 h-full w-full object-cover cursor-pointer"
-        style={{ objectPosition: "center 30%" }}
+        style={{ objectPosition: "center 35%" }}
       />
 
       {/* Controls overlay */}
