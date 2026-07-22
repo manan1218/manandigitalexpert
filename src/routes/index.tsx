@@ -172,7 +172,7 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
-      <header className="sticky top-0 z-40 border-b border-hairline bg-background/80 backdrop-blur">
+      <header className="relative z-40 border-b border-hairline bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
           <a href="#top" className="flex items-baseline gap-3">
             <span className="font-display text-lg text-ink">Manan Gupta</span>

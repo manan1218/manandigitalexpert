@@ -66,7 +66,7 @@ export function HeroVideo({ src }: { src: string }) {
   return (
     <div
       className="relative w-full overflow-hidden rounded-lg border border-hairline bg-surface group"
-      style={{ aspectRatio: "1080 / 1600" }}
+      style={{ aspectRatio: "1080 / 1300" }}
     >
       <video
         ref={ref}
