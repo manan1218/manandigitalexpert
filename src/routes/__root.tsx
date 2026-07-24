@@ -11,8 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { GrowthFrameworkProvider } from "@/lib/growth-framework";
-import { GrowthFramework } from "@/components/GrowthFramework";
 
 function NotFoundComponent() {
   return (
@@ -120,11 +118,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <GrowthFrameworkProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-        <GrowthFramework />
-      </GrowthFrameworkProvider>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
     </QueryClientProvider>
   );
 }
