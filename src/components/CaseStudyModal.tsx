@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { X, Check, TrendingUp, ArrowUpRight } from "lucide-react";
 import type { CaseStudy, CaseStudySection } from "@/lib/case-studies";
-import { CASE_STUDY_PATHWAYS, useGrowthFramework } from "@/lib/growth-framework";
 
 type Props = {
   study: CaseStudy | null;
@@ -95,14 +94,9 @@ function SectionBlock({ section }: { section: CaseStudySection }) {
 export function CaseStudyModal({ study, onClose }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
-  const { setOverride } = useGrowthFramework();
 
   useEffect(() => {
     if (!study) return;
-
-    // Activate case-study specific pathway on the Growth Framework
-    const pathway = CASE_STUDY_PATHWAYS[study.id];
-    if (pathway) setOverride(pathway);
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -132,9 +126,8 @@ export function CaseStudyModal({ study, onClose }: Props) {
       body.style.width = prev.width;
       body.style.overflow = prev.overflow;
       window.scrollTo(0, scrollY);
-      setOverride(null);
     };
-  }, [study, onClose, setOverride]);
+  }, [study, onClose]);
 
   if (!study) return null;
 
