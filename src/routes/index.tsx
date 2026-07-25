@@ -155,13 +155,61 @@ const certs = [
   "Udemy Certified Programmatic Advertiser",
 ];
 
-const impact = [
+const impact: { k: string; v: string; highlight?: boolean }[] = [
   { k: "12+", v: "Years leading growth" },
-  { k: "$35K+", v: "Monthly media budget, Capella" },
-  { k: "€100K+", v: "Managed for Capgemini EU" },
-  { k: "<€150", v: "LinkedIn Lead Gen CPL" },
-  { k: "~$90", v: "CPL, Capgemini UK" },
+  { k: "$35K+", v: "Monthly media budget, Capella", highlight: true },
+  { k: "€100K+", v: "Media budget managed, Capgemini EU" },
   { k: "10–15%", v: "ROAS uplift, hospitality" },
+  { k: "$500K+", v: "Room revenue growth, Capella" },
+  { k: "<€150", v: "LinkedIn Lead Gen CPL" },
+];
+
+const companies: { name: string; location?: string }[] = [
+  { name: "Capella Hotels & Resorts", location: "Bangkok" },
+  { name: "Millennium Hotels", location: "Abu Dhabi" },
+  { name: "Watermark Marketing Agency", location: "Dubai" },
+  { name: "Capgemini", location: "Europe" },
+  { name: "Publicis" },
+];
+
+const capabilities = [
+  {
+    n: "01",
+    name: "Paid Media & Acquisition",
+    desc: "Google Ads · Meta Ads · LinkedIn Ads",
+    Icon: "paid",
+  },
+  {
+    n: "02",
+    name: "Demand Generation",
+    desc: "Building qualified B2B pipeline",
+    Icon: "demand",
+  },
+  {
+    n: "03",
+    name: "Analytics & Measurement",
+    desc: "GA4 · GTM · Conversion Tracking",
+    Icon: "analytics",
+  },
+  {
+    n: "04",
+    name: "Media Investment Optimisation",
+    desc: "Improving ROAS · CPL · Budget Efficiency",
+    Icon: "optim",
+  },
+  {
+    n: "05",
+    name: "Agency & Stakeholder Leadership",
+    desc: "Strategy · Governance · Execution",
+    Icon: "lead",
+  },
+] as const;
+
+const markets = [
+  { name: "APAC", desc: "Asia Pacific" },
+  { name: "Middle East", desc: "GCC & Regional Markets" },
+  { name: "India", desc: "Indian Subcontinent" },
+  { name: "Europe", desc: "European Markets" },
 ];
 
 /* ---------- Page ---------- */
