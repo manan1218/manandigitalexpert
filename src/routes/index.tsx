@@ -379,7 +379,11 @@ function Index() {
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline md:grid-cols-3">
             {impact.map((i) => (
               <div key={i.v} className="group relative bg-background p-8 transition hover:bg-surface">
-                <div className="font-display text-5xl text-ink transition group-hover:text-accent sm:text-6xl">
+                <div
+                  className={`font-display text-5xl transition sm:text-6xl ${
+                    i.highlight ? "text-accent" : "text-ink"
+                  }`}
+                >
                   {i.k}
                 </div>
                 <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
@@ -392,6 +396,69 @@ function Index() {
             Figures reflect current and past engagements. Detailed case studies
             available on request or in the selected work below.
           </p>
+        </div>
+      </section>
+
+      {/* WHERE I CREATE VALUE + MARKET EXPERIENCE */}
+      <section id="capabilities" className="border-b border-hairline">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
+          <SectionLabel n="02 / Capabilities" title="Where I create value." />
+          <div className="mb-10 -mt-6 font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
+            Core capabilities
+          </div>
+
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-5">
+            {capabilities.map((c, idx) => {
+              const Icon = capabilityIconMap[c.Icon];
+              return (
+                <div
+                  key={c.n}
+                  className="group relative bg-background p-8 transition hover:bg-surface reveal"
+                  style={{ animationDelay: `${idx * 90}ms` }}
+                >
+                  <div className="mb-6 flex items-center justify-between">
+                    <Icon />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.n}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl leading-tight text-ink transition group-hover:text-accent sm:text-2xl">
+                    {c.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                    {c.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Market experience subsection */}
+          <div className="mt-20 border-t border-hairline pt-12">
+            <div className="mb-10 flex items-baseline justify-between">
+              <div className="flex items-baseline gap-4">
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+                  Market experience
+                </span>
+              </div>
+              <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted sm:inline">
+                Regions of operation
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline lg:grid-cols-4">
+              {markets.map((m) => (
+                <div key={m.name} className="group bg-background p-8 transition hover:bg-surface">
+                  <div className="font-display text-3xl leading-tight text-ink transition group-hover:text-accent sm:text-4xl">
+                    {m.name}
+                  </div>
+                  <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                    {m.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
