@@ -316,23 +316,58 @@ function Index() {
           </div>
         </div>
 
-        {/* Marquee ticker */}
-        <div className="overflow-hidden border-t border-hairline py-4">
-          <div className="marquee flex w-max gap-16 whitespace-nowrap font-display text-2xl italic text-ink-muted sm:text-3xl">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex gap-16">
-                <span>Capella Bangkok</span>
-                <span className="text-accent">✦</span>
-                <span>Capgemini Europe</span>
-                <span className="text-accent">✦</span>
-                <span>Grand Millennium</span>
-                <span className="text-accent">✦</span>
-                <span>Watermark Dubai</span>
-                <span className="text-accent">✦</span>
-                <span>Sapient Razorfish</span>
-                <span className="text-accent">✦</span>
-              </div>
-            ))}
+        {/* Companies worked with — static showcase */}
+        <div className="border-t border-hairline">
+          <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-20">
+            <div className="mb-10 flex items-baseline justify-between border-b border-hairline pb-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+                Companies worked with
+              </span>
+              <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted sm:inline">
+                Selected
+              </span>
+            </div>
+
+            {/* Row 1: 3 companies */}
+            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {companies.slice(0, 3).map((c) => (
+                <div
+                  key={c.name}
+                  className="group border-t border-hairline pt-6 transition"
+                >
+                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
+                    {c.name}
+                  </div>
+                  {c.location ? (
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.location}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2: 2 companies, centered on desktop */}
+            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="hidden lg:block" aria-hidden />
+              {companies.slice(3, 5).map((c, idx) => (
+                <div
+                  key={c.name}
+                  className={`group border-t border-hairline pt-6 transition ${
+                    idx === 1 ? "lg:col-span-1" : ""
+                  }`}
+                >
+                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
+                    {c.name}
+                  </div>
+                  {c.location ? (
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.location}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
