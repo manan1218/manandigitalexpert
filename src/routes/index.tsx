@@ -465,7 +465,7 @@ function Index() {
       {/* SELECTED WORK / CASE STUDIES */}
       <section id="work" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="02 / Selected work" title="Case studies." />
+          <SectionLabel n="03 / Selected work" title="Case studies." />
 
           <div className="space-y-24">
             {caseStudies.map((study, idx) => {
@@ -562,7 +562,7 @@ function Index() {
       {/* EXPERIENCE */}
       <section id="experience" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="03 / Experience" title="Twelve years, six companies, four countries." />
+          <SectionLabel n="04 / Experience" title="Twelve years, six companies, four countries." />
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -607,7 +607,7 @@ function Index() {
       <section id="certifications" className="border-b border-hairline">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
           <div>
-            <SectionLabel n="04 / Expertise" title="Core skills." />
+            <SectionLabel n="05 / Expertise" title="Core skills." />
             <ul className="space-y-4">
               {skills.map((s, i) => (
                 <li
@@ -626,7 +626,7 @@ function Index() {
           </div>
 
           <div>
-            <SectionLabel n="05 / Certifications" title="Credentials." />
+            <SectionLabel n="06 / Certifications" title="Credentials." />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {certs.map((c) => (
                 <div
@@ -658,7 +658,7 @@ function Index() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-32">
           <div className="lg:col-span-7">
           <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-              06 / Contact
+              07 / Contact
             </div>
             <h2 className="mt-6 font-display text-5xl leading-[1] tracking-tight text-ink sm:text-7xl lg:text-[6rem]">
               Let's build the
