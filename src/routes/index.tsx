@@ -5,7 +5,22 @@ import introVideo from "@/assets/intro.mp4.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { CoreContributions } from "@/components/CoreContributions";
+import {
+  IconPaidMedia,
+  IconDemandGen,
+  IconAnalytics,
+  IconOptimisation,
+  IconLeadership,
+} from "@/components/CapabilityIcons";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies";
+
+const capabilityIconMap = {
+  paid: IconPaidMedia,
+  demand: IconDemandGen,
+  analytics: IconAnalytics,
+  optim: IconOptimisation,
+  lead: IconLeadership,
+} as const;
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -155,13 +170,61 @@ const certs = [
   "Udemy Certified Programmatic Advertiser",
 ];
 
-const impact = [
+const impact: { k: string; v: string; highlight?: boolean }[] = [
   { k: "12+", v: "Years leading growth" },
-  { k: "$35K+", v: "Monthly media budget, Capella" },
-  { k: "€100K+", v: "Managed for Capgemini EU" },
-  { k: "<€150", v: "LinkedIn Lead Gen CPL" },
-  { k: "~$90", v: "CPL, Capgemini UK" },
+  { k: "$35K+", v: "Monthly media budget, Capella", highlight: true },
+  { k: "€100K+", v: "Media budget managed, Capgemini EU" },
   { k: "10–15%", v: "ROAS uplift, hospitality" },
+  { k: "$500K+", v: "Room revenue growth, Capella" },
+  { k: "<€150", v: "LinkedIn Lead Gen CPL" },
+];
+
+const companies: { name: string; location?: string }[] = [
+  { name: "Capella Hotels & Resorts", location: "Bangkok" },
+  { name: "Millennium Hotels", location: "Abu Dhabi" },
+  { name: "Watermark Marketing Agency", location: "Dubai" },
+  { name: "Capgemini", location: "Europe" },
+  { name: "Publicis" },
+];
+
+const capabilities = [
+  {
+    n: "01",
+    name: "Paid Media & Acquisition",
+    desc: "Google Ads · Meta Ads · LinkedIn Ads",
+    Icon: "paid",
+  },
+  {
+    n: "02",
+    name: "Demand Generation",
+    desc: "Building qualified B2B pipeline",
+    Icon: "demand",
+  },
+  {
+    n: "03",
+    name: "Analytics & Measurement",
+    desc: "GA4 · GTM · Conversion Tracking",
+    Icon: "analytics",
+  },
+  {
+    n: "04",
+    name: "Media Investment Optimisation",
+    desc: "Improving ROAS · CPL · Budget Efficiency",
+    Icon: "optim",
+  },
+  {
+    n: "05",
+    name: "Agency & Stakeholder Leadership",
+    desc: "Strategy · Governance · Execution",
+    Icon: "lead",
+  },
+] as const;
+
+const markets = [
+  { name: "APAC", desc: "Asia Pacific" },
+  { name: "Middle East", desc: "GCC & Regional Markets" },
+  { name: "India", desc: "Indian Subcontinent" },
+  { name: "Europe", desc: "European Markets" },
 ];
 
 /* ---------- Page ---------- */
@@ -253,23 +316,58 @@ function Index() {
           </div>
         </div>
 
-        {/* Marquee ticker */}
-        <div className="overflow-hidden border-t border-hairline py-4">
-          <div className="marquee flex w-max gap-16 whitespace-nowrap font-display text-2xl italic text-ink-muted sm:text-3xl">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex gap-16">
-                <span>Capella Bangkok</span>
-                <span className="text-accent">✦</span>
-                <span>Capgemini Europe</span>
-                <span className="text-accent">✦</span>
-                <span>Grand Millennium</span>
-                <span className="text-accent">✦</span>
-                <span>Watermark Dubai</span>
-                <span className="text-accent">✦</span>
-                <span>Sapient Razorfish</span>
-                <span className="text-accent">✦</span>
-              </div>
-            ))}
+        {/* Companies worked with — static showcase */}
+        <div className="border-t border-hairline">
+          <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10 lg:py-20">
+            <div className="mb-10 flex items-baseline justify-between border-b border-hairline pb-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+                Companies worked with
+              </span>
+              <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted sm:inline">
+                Selected
+              </span>
+            </div>
+
+            {/* Row 1: 3 companies */}
+            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              {companies.slice(0, 3).map((c) => (
+                <div
+                  key={c.name}
+                  className="group border-t border-hairline pt-6 transition"
+                >
+                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
+                    {c.name}
+                  </div>
+                  {c.location ? (
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.location}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2: 2 companies, centered on desktop */}
+            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="hidden lg:block" aria-hidden />
+              {companies.slice(3, 5).map((c, idx) => (
+                <div
+                  key={c.name}
+                  className={`group border-t border-hairline pt-6 transition ${
+                    idx === 1 ? "lg:col-span-1" : ""
+                  }`}
+                >
+                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
+                    {c.name}
+                  </div>
+                  {c.location ? (
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.location}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -281,7 +379,11 @@ function Index() {
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline md:grid-cols-3">
             {impact.map((i) => (
               <div key={i.v} className="group relative bg-background p-8 transition hover:bg-surface">
-                <div className="font-display text-5xl text-ink transition group-hover:text-accent sm:text-6xl">
+                <div
+                  className={`font-display text-5xl transition sm:text-6xl ${
+                    i.highlight ? "text-accent" : "text-ink"
+                  }`}
+                >
                   {i.k}
                 </div>
                 <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
@@ -297,10 +399,73 @@ function Index() {
         </div>
       </section>
 
+      {/* WHERE I CREATE VALUE + MARKET EXPERIENCE */}
+      <section id="capabilities" className="border-b border-hairline">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
+          <SectionLabel n="02 / Capabilities" title="Where I create value." />
+          <div className="mb-10 -mt-6 font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
+            Core capabilities
+          </div>
+
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-5">
+            {capabilities.map((c, idx) => {
+              const Icon = capabilityIconMap[c.Icon];
+              return (
+                <div
+                  key={c.n}
+                  className="group relative bg-background p-8 transition hover:bg-surface reveal"
+                  style={{ animationDelay: `${idx * 90}ms` }}
+                >
+                  <div className="mb-6 flex items-center justify-between">
+                    <Icon />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.n}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl leading-tight text-ink transition group-hover:text-accent sm:text-2xl">
+                    {c.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                    {c.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Market experience subsection */}
+          <div className="mt-20 border-t border-hairline pt-12">
+            <div className="mb-10 flex items-baseline justify-between">
+              <div className="flex items-baseline gap-4">
+                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted">
+                  Market experience
+                </span>
+              </div>
+              <span className="hidden font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted sm:inline">
+                Regions of operation
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline lg:grid-cols-4">
+              {markets.map((m) => (
+                <div key={m.name} className="group bg-background p-8 transition hover:bg-surface">
+                  <div className="font-display text-3xl leading-tight text-ink transition group-hover:text-accent sm:text-4xl">
+                    {m.name}
+                  </div>
+                  <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                    {m.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SELECTED WORK / CASE STUDIES */}
       <section id="work" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="02 / Selected work" title="Case studies." />
+          <SectionLabel n="03 / Selected work" title="Case studies." />
 
           <div className="space-y-24">
             {caseStudies.map((study, idx) => {
@@ -397,7 +562,7 @@ function Index() {
       {/* EXPERIENCE */}
       <section id="experience" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="03 / Experience" title="Twelve years, six companies, four countries." />
+          <SectionLabel n="04 / Experience" title="Twelve years, six companies, four countries." />
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -442,7 +607,7 @@ function Index() {
       <section id="certifications" className="border-b border-hairline">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
           <div>
-            <SectionLabel n="04 / Expertise" title="Core skills." />
+            <SectionLabel n="05 / Expertise" title="Core skills." />
             <ul className="space-y-4">
               {skills.map((s, i) => (
                 <li
@@ -461,7 +626,7 @@ function Index() {
           </div>
 
           <div>
-            <SectionLabel n="05 / Certifications" title="Credentials." />
+            <SectionLabel n="06 / Certifications" title="Credentials." />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {certs.map((c) => (
                 <div
@@ -493,7 +658,7 @@ function Index() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-32">
           <div className="lg:col-span-7">
           <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-              06 / Contact
+              07 / Contact
             </div>
             <h2 className="mt-6 font-display text-5xl leading-[1] tracking-tight text-ink sm:text-7xl lg:text-[6rem]">
               Let's build the
