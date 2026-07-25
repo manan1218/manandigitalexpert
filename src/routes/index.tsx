@@ -5,7 +5,22 @@ import introVideo from "@/assets/intro.mp4.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { CoreContributions } from "@/components/CoreContributions";
+import {
+  IconPaidMedia,
+  IconDemandGen,
+  IconAnalytics,
+  IconOptimisation,
+  IconLeadership,
+} from "@/components/CapabilityIcons";
 import { caseStudies, type CaseStudy } from "@/lib/case-studies";
+
+const capabilityIconMap = {
+  paid: IconPaidMedia,
+  demand: IconDemandGen,
+  analytics: IconAnalytics,
+  optim: IconOptimisation,
+  lead: IconLeadership,
+} as const;
 
 export const Route = createFileRoute("/")({
   component: Index,
