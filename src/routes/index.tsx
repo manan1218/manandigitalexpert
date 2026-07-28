@@ -681,7 +681,7 @@ function Index() {
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="#book"
+                href="mailto:mananrgupta@gmail.com?subject=Intro%20call"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-accent-foreground transition hover:bg-ink hover:text-background"
               >
                 Book an intro call
