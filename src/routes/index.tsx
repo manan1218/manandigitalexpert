@@ -185,7 +185,9 @@ const companies: { name: string; location?: string }[] = [
   { name: "Millennium Hotels", location: "Abu Dhabi" },
   { name: "Watermark Marketing Agency", location: "Dubai" },
   { name: "Capgemini", location: "Europe" },
-  { name: "Publicis" },
+  { name: "Publicis", location: "India" },
+  { name: "Sprinklr", location: "India" },
+  { name: "Sapient Razorfish", location: "India" },
 ];
 
 const capabilities = [
@@ -359,12 +361,30 @@ function Index() {
             {/* Row 2: 2 companies, centered on desktop */}
             <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               <div className="hidden lg:block" aria-hidden />
-              {companies.slice(3, 5).map((c, idx) => (
+              {companies.slice(3, 5).map((c) => (
                 <div
                   key={c.name}
-                  className={`group border-t border-hairline pt-6 transition ${
-                    idx === 1 ? "lg:col-span-1" : ""
-                  }`}
+                  className="group border-t border-hairline pt-6 transition"
+                >
+                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
+                    {c.name}
+                  </div>
+                  {c.location ? (
+                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
+                      {c.location}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 3: 2 companies, centered on desktop */}
+            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="hidden lg:block" aria-hidden />
+              {companies.slice(5, 7).map((c) => (
+                <div
+                  key={c.name}
+                  className="group border-t border-hairline pt-6 transition"
                 >
                   <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
                     {c.name}
