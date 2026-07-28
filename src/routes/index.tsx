@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
+import cvAsset from "@/assets/cv.pdf.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { CoreContributions } from "@/components/CoreContributions";
@@ -172,10 +173,10 @@ const certs = [
 
 const impact: { k: string; v: string; highlight?: boolean }[] = [
   { k: "12+", v: "Years leading growth" },
-  { k: "$35K+", v: "Monthly media budget, Capella", highlight: true },
-  { k: "€100K+", v: "Media budget managed, Capgemini EU" },
+  { k: "$35K+", v: "Monthly media budget, hospitality brand", highlight: true },
+  { k: "€250K+", v: "Media budget managed, Capgemini EU" },
   { k: "10–15%", v: "ROAS uplift, hospitality" },
-  { k: "$500K+", v: "Room revenue growth, Capella" },
+  { k: "$500K+", v: "Room revenue growth, Capella", highlight: true },
   { k: "<€150", v: "LinkedIn Lead Gen CPL" },
 ];
 
@@ -301,6 +302,14 @@ function Index() {
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-5 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-ink"
               >
                 Book an intro call
+              </a>
+              <a
+                href={cvAsset.url}
+                download
+                className="inline-flex items-center gap-2 rounded-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted underline decoration-hairline underline-offset-4 transition hover:text-ink"
+              >
+                <Download className="h-3.5 w-3.5" />
+                Download CV
               </a>
             </div>
           </div>
@@ -670,19 +679,21 @@ function Index() {
               about performance, I'd love to hear about the challenge.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="mailto:mananrgupta@gmail.com"
+                href="mailto:mananrgupta@gmail.com?subject=Intro%20call"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-accent-foreground transition hover:bg-ink hover:text-background"
               >
-                mananrgupta@gmail.com
+                Book an intro call
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="tel:+919971909462"
-                className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-ink"
+                href={cvAsset.url}
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink transition hover:border-ink"
               >
-                +91 99719 09462
+                <Download className="h-3.5 w-3.5" />
+                Download CV
               </a>
             </div>
           </div>
@@ -696,14 +707,6 @@ function Index() {
                 <li className="flex items-center gap-3 text-ink">
                   <MapPin className="h-4 w-4 text-accent" />
                   New Delhi, India · Bangkok, Thailand
-                </li>
-                <li className="flex items-center gap-3 text-ink">
-                  <Mail className="h-4 w-4 text-accent" />
-                  mananrgupta@gmail.com
-                </li>
-                <li className="flex items-center gap-3 text-ink">
-                  <Phone className="h-4 w-4 text-accent" />
-                  +91 99719 09462
                 </li>
               </ul>
             </div>
@@ -733,7 +736,7 @@ function Index() {
           <div>© 2026 Manan Gupta — All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#top" className="hover:text-ink">Back to top ↑</a>
-            <a href="mailto:mananrgupta@gmail.com" className="hover:text-ink">Email</a>
+            <a href={cvAsset.url} download className="hover:text-ink">Download CV</a>
           </div>
         </div>
       </footer>
