@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, Linkedin, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
