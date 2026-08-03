@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, Linkedin, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import introVideo from "@/assets/intro.mp4.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
@@ -690,6 +690,26 @@ function Index() {
                 <li className="flex items-center gap-3 text-ink">
                   <MapPin className="h-4 w-4 text-accent" />
                   Open to relocation
+                </li>
+                <li>
+                  <a
+                    href="tel:+919971909462"
+                    className="flex items-center gap-3 text-ink transition hover:text-accent"
+                  >
+                    <Phone className="h-4 w-4 text-accent" />
+                    +91-9971909462
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/manan1218/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-3 text-ink transition hover:text-accent"
+                  >
+                    <Linkedin className="h-4 w-4 text-accent" />
+                    linkedin.com/in/manan1218
+                  </a>
                 </li>
               </ul>
             </div>
