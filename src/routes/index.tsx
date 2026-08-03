@@ -617,13 +617,13 @@ function Index() {
 
           <div>
             <SectionLabel n="06 / Certifications" title="Credentials." />
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {certs.map((c, i) => (
                 <div
                   key={c}
-                  className="group flex items-start gap-4 rounded-lg border border-hairline bg-surface p-5 transition hover:border-accent"
+                  className="group flex items-start gap-4 rounded-lg border border-hairline bg-surface px-5 py-4 transition hover:border-accent"
                 >
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-hairline font-mono text-[10px] text-ink-muted transition group-hover:border-accent group-hover:text-accent">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-hairline font-mono text-[10px] text-ink-muted transition group-hover:border-accent group-hover:text-accent">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
