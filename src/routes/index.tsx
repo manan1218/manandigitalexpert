@@ -27,45 +27,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-/* ---------- Reusable placeholder container ---------- */
-function Placeholder({
-  label,
-  hint,
-  aspect = "aspect-video",
-  className = "",
-}: {
-  label: string;
-  hint?: string;
-  aspect?: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative ${aspect} w-full overflow-hidden rounded-lg border border-dashed border-hairline bg-surface ${className}`}
-    >
-      <div className="absolute inset-0 grain" />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, transparent 49.5%, var(--color-hairline) 49.5%, var(--color-hairline) 50.5%, transparent 50.5%)",
-          backgroundSize: "28px 28px",
-          opacity: 0.35,
-        }}
-      />
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center">
-        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
-          [ Placeholder ]
-        </span>
-        <span className="font-display text-lg text-ink">{label}</span>
-        {hint ? (
-          <span className="max-w-xs text-xs text-ink-muted">{hint}</span>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
 /* ---------- Small primitives ---------- */
 function SectionLabel({ n, title }: { n: string; title: string }) {
   return (
