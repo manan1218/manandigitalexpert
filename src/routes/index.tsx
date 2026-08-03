@@ -685,7 +685,11 @@ function Index() {
               <ul className="mt-6 space-y-4 text-sm">
                 <li className="flex items-center gap-3 text-ink">
                   <MapPin className="h-4 w-4 text-accent" />
-                  New Delhi, India · Bangkok, Thailand
+                  New Delhi, India
+                </li>
+                <li className="flex items-center gap-3 text-ink">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  Open to relocation
                 </li>
               </ul>
             </div>
