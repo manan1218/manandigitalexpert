@@ -27,45 +27,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-/* ---------- Reusable placeholder container ---------- */
-function Placeholder({
-  label,
-  hint,
-  aspect = "aspect-video",
-  className = "",
-}: {
-  label: string;
-  hint?: string;
-  aspect?: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative ${aspect} w-full overflow-hidden rounded-lg border border-dashed border-hairline bg-surface ${className}`}
-    >
-      <div className="absolute inset-0 grain" />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, transparent 49.5%, var(--color-hairline) 49.5%, var(--color-hairline) 50.5%, transparent 50.5%)",
-          backgroundSize: "28px 28px",
-          opacity: 0.35,
-        }}
-      />
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center">
-        <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
-          [ Placeholder ]
-        </span>
-        <span className="font-display text-lg text-ink">{label}</span>
-        {hint ? (
-          <span className="max-w-xs text-xs text-ink-muted">{hint}</span>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
 /* ---------- Small primitives ---------- */
 function SectionLabel({ n, title }: { n: string; title: string }) {
   return (
@@ -656,24 +617,22 @@ function Index() {
 
           <div>
             <SectionLabel n="06 / Certifications" title="Credentials." />
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {certs.map((c) => (
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {certs.map((c, i) => (
                 <div
                   key={c}
-                  className="group relative overflow-hidden rounded-lg border border-hairline bg-surface p-5 transition hover:border-accent"
+                  className="group flex items-start gap-4 rounded-lg border border-hairline bg-surface p-5 transition hover:border-accent"
                 >
-                  <div className="mb-4">
-                    <Placeholder
-                      aspect="aspect-[16/9]"
-                      label="Cert badge"
-                      hint="Drop PNG/SVG badge here."
-                    />
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
-                    Certification
-                  </div>
-                  <div className="mt-1 font-display text-base text-ink">
-                    {c}
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-hairline font-mono text-[10px] text-ink-muted transition group-hover:border-accent group-hover:text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
+                      Certification
+                    </div>
+                    <div className="mt-1 font-display text-base leading-snug text-ink">
+                      {c}
+                    </div>
                   </div>
                 </div>
               ))}
