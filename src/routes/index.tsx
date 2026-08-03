@@ -656,24 +656,22 @@ function Index() {
 
           <div>
             <SectionLabel n="06 / Certifications" title="Credentials." />
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {certs.map((c) => (
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {certs.map((c, i) => (
                 <div
                   key={c}
-                  className="group relative overflow-hidden rounded-lg border border-hairline bg-surface p-5 transition hover:border-accent"
+                  className="group flex items-start gap-4 rounded-lg border border-hairline bg-surface p-5 transition hover:border-accent"
                 >
-                  <div className="mb-4">
-                    <Placeholder
-                      aspect="aspect-[16/9]"
-                      label="Cert badge"
-                      hint="Drop PNG/SVG badge here."
-                    />
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
-                    Certification
-                  </div>
-                  <div className="mt-1 font-display text-base text-ink">
-                    {c}
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-hairline font-mono text-[10px] text-ink-muted transition group-hover:border-accent group-hover:text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
+                      Certification
+                    </div>
+                    <div className="mt-1 font-display text-base leading-snug text-ink">
+                      {c}
+                    </div>
                   </div>
                 </div>
               ))}
