@@ -213,7 +213,9 @@ function Index() {
             <a href="#contact" className="hover:text-ink">Contact</a>
           </nav>
           <a
-            href="#contact"
+            href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+            target="_blank"
+            rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-foreground transition hover:bg-accent/90"
           >
             Let's talk
