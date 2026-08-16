@@ -261,7 +261,9 @@ function Index() {
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="#contact"
+                href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-5 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-ink"
               >
                 Book an intro call
@@ -660,7 +662,9 @@ function Index() {
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="mailto:mananrgupta@gmail.com?subject=Intro%20call"
+                href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+                target="_blank"
+                rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-accent-foreground transition hover:bg-ink hover:text-background"
               >
                 Book an intro call
