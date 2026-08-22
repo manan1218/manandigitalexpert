@@ -671,7 +671,7 @@ function Index() {
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="/assets/documents/Manan-Gupta-CV.pdf"
+                href="/assets/documents/cv.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink transition hover:border-ink"
               >
