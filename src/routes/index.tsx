@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Linkedin, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
-import introVideo from "@/assets/intro.mp4.asset.json";
-import cvAsset from "@/assets/cv.pdf.asset.json";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { CoreContributions } from "@/components/CoreContributions";
@@ -271,7 +269,7 @@ function Index() {
                 Book an intro call
               </a>
               <a
-                href={cvAsset.url}
+                href="/assets/documents/Manan-Gupta-CV.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted underline decoration-hairline underline-offset-4 transition hover:text-ink"
               >
@@ -284,7 +282,7 @@ function Index() {
           {/* Portrait/Video container */}
           <div className="lg:col-span-5">
             <div className="relative reveal" style={{ animationDelay: "220ms" }}>
-              <HeroVideo src={introVideo.url} />
+              <HeroVideo src="/assets/video/intro.mp4" />
               <div className="absolute -bottom-4 -left-4 hidden rounded-md border border-hairline bg-surface-2 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted sm:block">
                 REEL / INTRO
               </div>
@@ -673,7 +671,7 @@ function Index() {
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href={cvAsset.url}
+                href="/assets/documents/Manan-Gupta-CV.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink transition hover:border-ink"
               >
@@ -745,7 +743,7 @@ function Index() {
           <div>© 2026 Manan Gupta — All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#top" className="hover:text-ink">Back to top ↑</a>
-            <a href={cvAsset.url} download className="hover:text-ink">Download CV</a>
+            <a href="/assets/documents/Manan-Gupta-CV.pdf" download className="hover:text-ink">Download CV</a>
           </div>
         </div>
       </footer>
