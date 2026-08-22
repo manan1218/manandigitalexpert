@@ -1,8 +1,3 @@
-import cs1 from "@/assets/case-study-1.png.asset.json";
-import cs2 from "@/assets/case-study-2.png.asset.json";
-import cs3 from "@/assets/case-study-3.png.asset.json";
-import cs4 from "@/assets/case-study-4.png.asset.json";
-import cs5 from "@/assets/case-study-5.png.asset.json";
 
 export type CaseStudySection = {
   heading: string;
@@ -29,7 +24,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: "cs-01",
-    banner: cs1.url,
+    banner: "/assets/images/case-study-1.png",
     eyebrow: "Finding the Next Booking",
     title: "The Click-to-Book Framework",
     subtitle: "How I predicted bookings before spending marketing dollars.",
@@ -132,7 +127,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "cs-02",
-    banner: cs2.url,
+    banner: "/assets/images/case-study-2.png",
     eyebrow: "Finding the Right Decision Makers",
     title: "Qualified Enterprise Leads Without a Landing Page",
     subtitle:
@@ -242,7 +237,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "cs-03",
-    banner: cs3.url,
+    banner: "/assets/images/case-study-3.png",
     eyebrow: "Rethinking a €40K Media Strategy",
     title: "Audience Intelligence & Full-Funnel Planning",
     subtitle:
@@ -336,7 +331,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "cs-04",
-    banner: cs4.url,
+    banner: "/assets/images/case-study-4.png",
     eyebrow: "The Learning Phase Trap",
     title: "Unlocking Campaign Performance Through Customer Behaviour",
     subtitle: "How understanding customer behaviour helped unlock campaign performance.",
@@ -417,7 +412,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "cs-05",
-    banner: cs5.url,
+    banner: "/assets/images/case-study-5.png",
     eyebrow: "Direct Booking Growth",
     title: "$1.05M in Direct Booking Revenue Through Smarter Paid Media",
     subtitle:
