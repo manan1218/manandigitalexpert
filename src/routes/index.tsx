@@ -269,7 +269,7 @@ function Index() {
                 Book an intro call
               </a>
               <a
-                href="/assets/documents/Manan-Gupta-CV.pdf"
+                href="/assets/documents/cv.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-full px-4 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink-muted underline decoration-hairline underline-offset-4 transition hover:text-ink"
               >
@@ -743,7 +743,7 @@ function Index() {
           <div>© 2026 Manan Gupta — All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#top" className="hover:text-ink">Back to top ↑</a>
-            <a href="/assets/documents/Manan-Gupta-CV.pdf" download className="hover:text-ink">Download CV</a>
+            <a href="/assets/documents/cv.pdf" download className="hover:text-ink">Download CV</a>
           </div>
         </div>
       </footer>
