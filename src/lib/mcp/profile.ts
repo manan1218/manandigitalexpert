@@ -17,7 +17,7 @@ export const profile = {
 export const impact = [
   { metric: "12+", label: "Years leading growth" },
   { metric: "$35K+", label: "Monthly media budget, hospitality brand" },
-  { metric: "€250K+", label: "Media budget managed, Capgemini EU" },
+  { metric: "€500K+", label: "Annual media budget, Capgemini EU" },
   { metric: "10–15%", label: "ROAS uplift, hospitality" },
   { metric: "$500K+", label: "Room revenue growth, Capella" },
   { metric: "<€150", label: "LinkedIn Lead Gen CPL" },
@@ -80,10 +80,10 @@ export const experience = [
     role: "Team Manager — Digital Media",
     period: "Jan 2022 — Present",
     bullets: [
-      "Owns €100,000+ media budget across Capgemini Romania, UK & Germany — LinkedIn Lead Gen at < €150 CPL.",
-      "Delivered ~$90 CPL for Capgemini UK through audience refinement, creative testing and bid optimization.",
-      "Leads and mentors a team of 5 specialists across planning, execution and reporting.",
-      "Owns full-funnel campaign lifecycle — strategy, targeting architecture, creative direction, optimization.",
+      "Acts as India POC for global media strategy & planning — builds objective-led media plans and KPI/measurement frameworks for Capgemini Romania, UK & Germany, overseeing €500,000+ in annual media budget with €2M+ cumulative spend managed since 2022.",
+      "Defines measurement approach and attribution modeling across LinkedIn Lead Gen and Google Ads (Search, Display, YouTube), using GA4 to evaluate cross-channel effectiveness and funnel performance.",
+      "Owns tagging and tracking foundations — configures Google Tag Manager and Campaign Manager 360 with web dev partners to ensure accurate conversion tracking and clean data flow into reporting dashboards.",
+      "Drives regular performance reviews with UK, Germany & Romania stakeholders, translating attribution data into optimization recommendations — delivered qualified leads at <€150 CPL (Romania) and ~$90 CPL (UK), outperforming benchmarked acquisition costs.",
     ],
   },
   {
