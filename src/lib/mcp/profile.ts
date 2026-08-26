@@ -56,7 +56,7 @@ export const companies = [
   { name: "Millennium Hotels", location: "Abu Dhabi" },
   { name: "Watermark Marketing Agency", location: "Dubai" },
   { name: "Capgemini", location: "Europe" },
-  { name: "Publicis", location: "India" },
+  
   { name: "Sprinklr", location: "India" },
   { name: "Publicis (Sapient Razorfish)", location: "India" },
 ];
