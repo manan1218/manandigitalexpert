@@ -133,7 +133,7 @@ const certs = [
 const impact: { k: string; v: string; highlight?: boolean }[] = [
   { k: "12+", v: "Years leading growth" },
   { k: "$35K+", v: "Monthly media budget, hospitality brand", highlight: true },
-  { k: "€250K+", v: "Media budget managed, Capgemini EU" },
+  { k: "€500K+", v: "Annual media budget, Capgemini EU" },
   { k: "10–15%", v: "ROAS uplift, hospitality" },
   { k: "$500K+", v: "Room revenue growth, Capella", highlight: true },
   { k: "<€150", v: "LinkedIn Lead Gen CPL" },
