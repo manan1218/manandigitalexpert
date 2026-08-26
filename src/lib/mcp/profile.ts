@@ -17,7 +17,7 @@ export const profile = {
 export const impact = [
   { metric: "12+", label: "Years leading growth" },
   { metric: "$35K+", label: "Monthly media budget, hospitality brand" },
-  { metric: "€250K+", label: "Media budget managed, Capgemini EU" },
+  { metric: "€500K+", label: "Annual media budget, Capgemini EU" },
   { metric: "10–15%", label: "ROAS uplift, hospitality" },
   { metric: "$500K+", label: "Room revenue growth, Capella" },
   { metric: "<€150", label: "LinkedIn Lead Gen CPL" },
