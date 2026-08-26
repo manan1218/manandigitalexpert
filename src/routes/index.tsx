@@ -45,10 +45,10 @@ const experience = [
   {
     company: "Capella Hotels & Resorts",
     location: "Bangkok",
-    role: "Digital Marketing Manager",
+    role: "Freelance Digital Marketing Consultant",
     period: "Dec 2023 — Present",
     bullets: [
-      "Manages $35,000+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
+      "Manages €32,000+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
       "Partners with Revenue on geo-level insights to sharpen targeting across top source markets.",
       "Optimizes full-funnel campaigns (Search, Display, PMAX, YouTube, Meta) — increasing direct bookings, reducing OTA reliance.",
       "Leads Meta/IG social advertising for Capella Bangkok and its F&B outlets.",
@@ -146,7 +146,7 @@ const companies: { name: string; location?: string }[] = [
   { name: "Capgemini", location: "Europe" },
   { name: "Publicis", location: "India" },
   { name: "Sprinklr", location: "India" },
-  { name: "Sapient Razorfish", location: "India" },
+  { name: "Publicis (Sapient Razorfish)", location: "India" },
 ];
 
 const capabilities = [
