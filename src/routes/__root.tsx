@@ -4,13 +4,39 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
+function AnalyticsTracker() {
+  const location = useLocation();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.gtag !== "function") {
+      return;
+    }
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    window.gtag("event", "page_view", { page_path: location.pathname });
+  }, [location.pathname]);
+
+  return null;
+}
 
 function NotFoundComponent() {
   return (
@@ -92,6 +118,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
+    scripts: [
+      { async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-0RRDEM71YJ" },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-0RRDEM71YJ');`,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -118,7 +153,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <AnalyticsTracker />
       <Outlet />
     </QueryClientProvider>
   );
