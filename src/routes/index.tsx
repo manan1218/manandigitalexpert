@@ -706,6 +706,15 @@ function Index() {
                 </li>
                 <li>
                   <a
+                    href="mailto:manan.gupta@manandigitalexpert.com"
+                    className="flex items-center gap-3 text-ink transition hover:text-accent"
+                  >
+                    <Mail className="h-4 w-4 text-accent" />
+                    manan.gupta@manandigitalexpert.com
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://www.linkedin.com/in/manan1218/"
                     target="_blank"
                     rel="noreferrer"
