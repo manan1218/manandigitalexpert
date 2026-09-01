@@ -211,7 +211,7 @@ function Index() {
             <a href="#contact" className="hover:text-ink">Contact</a>
           </nav>
           <a
-            href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+            href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-foreground transition hover:bg-accent/90"
@@ -261,7 +261,7 @@ function Index() {
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+                href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-5 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-ink"
@@ -662,7 +662,7 @@ function Index() {
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="https://outlook.live.com/mail/0/deeplink/compose?to=manangupta.co@gmail.com&subject=Intro%20call%20request"
+                href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-accent-foreground transition hover:bg-ink hover:text-background"
