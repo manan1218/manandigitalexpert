@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, Linkedin, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Download, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
