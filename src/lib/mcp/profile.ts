@@ -19,7 +19,7 @@ export const impact = [
   { metric: "$35K+", label: "Monthly media budget, hospitality brand" },
   { metric: "€500K+", label: "Annual media budget, Capgemini EU" },
   { metric: "10–15%", label: "ROAS uplift, hospitality" },
-  { metric: "$500K+", label: "Room revenue growth, Capella" },
+  { metric: "$1.05M", label: "Direct booking revenue, Capella" },
   { metric: "<€150", label: "LinkedIn Lead Gen CPL" },
 ];
 
@@ -68,7 +68,7 @@ export const experience = [
     role: "Freelance Digital Marketing Consultant",
     period: "Dec 2023 — Present",
     bullets: [
-      "Manages €32,000+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
+      "Manages $35K+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
       "Partners with Revenue on geo-level insights to sharpen targeting across top source markets.",
       "Optimizes full-funnel campaigns (Search, Display, PMAX, YouTube, Meta) — increasing direct bookings, reducing OTA reliance.",
       "Leads Meta/IG social advertising for Capella Bangkok and its F&B outlets.",
@@ -77,13 +77,14 @@ export const experience = [
   {
     company: "Capgemini India",
     location: "Gurugram",
-    role: "Team Manager — Digital Media",
+    role: "Team Manager — Digital Marketing",
     period: "Jan 2022 — Present",
     bullets: [
       "Acts as India POC for global media strategy & planning — builds objective-led media plans and KPI/measurement frameworks for Capgemini Romania, UK & Germany, overseeing €500,000+ in annual media budget with €2M+ cumulative spend managed since 2022.",
       "Defines measurement approach and attribution modeling across LinkedIn Lead Gen and Google Ads (Search, Display, YouTube), using GA4 to evaluate cross-channel effectiveness and funnel performance.",
       "Owns tagging and tracking foundations — configures Google Tag Manager and Campaign Manager 360 with web dev partners to ensure accurate conversion tracking and clean data flow into reporting dashboards.",
       "Drives regular performance reviews with UK, Germany & Romania stakeholders, translating attribution data into optimization recommendations — delivered qualified leads at <€150 CPL (Romania) and ~$90 CPL (UK), outperforming benchmarked acquisition costs.",
+      "Leads and mentors a team of 5 specialists across paid media planning, execution and reporting.",
     ],
   },
   {
@@ -106,6 +107,7 @@ export const experience = [
       "Developed digital media strategy: Google Ads, remarketing, SEO, EDMs and website updates.",
       "Evaluated brand website performance and advised on promotion and web presence.",
       "Executed paid social across Facebook, Instagram, LinkedIn, Twitter and YouTube.",
+      "Diagnosed that the hotel's guest Wi-Fi login was redirecting in-house guests to the website homepage, inflating bounce rate and masking true performance; fixed the redirect, lifting website conversion rate by 12%+ within a year.",
     ],
   },
   {
