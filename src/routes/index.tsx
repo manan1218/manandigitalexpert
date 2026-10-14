@@ -48,7 +48,7 @@ const experience = [
     role: "Freelance Digital Marketing Consultant",
     period: "Dec 2023 — Present",
     bullets: [
-      "Manages €32,000+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
+      "Manages $35K+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
       "Partners with Revenue on geo-level insights to sharpen targeting across top source markets.",
       "Optimizes full-funnel campaigns (Search, Display, PMAX, YouTube, Meta) — increasing direct bookings, reducing OTA reliance.",
       "Leads Meta/IG social advertising for Capella Bangkok and its F&B outlets.",
@@ -57,13 +57,14 @@ const experience = [
   {
     company: "Capgemini India",
     location: "Gurugram",
-    role: "Team Manager — Digital Media",
+    role: "Team Manager — Digital Marketing",
     period: "Jan 2022 — Present",
     bullets: [
       "Acts as India POC for global media strategy & planning — builds objective-led media plans and KPI/measurement frameworks for Capgemini Romania, UK & Germany, overseeing €500,000+ in annual media budget with €2M+ cumulative spend managed since 2022.",
       "Defines measurement approach and attribution modeling across LinkedIn Lead Gen and Google Ads (Search, Display, YouTube), using GA4 to evaluate cross-channel effectiveness and funnel performance.",
       "Owns tagging and tracking foundations — configures Google Tag Manager and Campaign Manager 360 with web dev partners to ensure accurate conversion tracking and clean data flow into reporting dashboards.",
       "Drives regular performance reviews with UK, Germany & Romania stakeholders, translating attribution data into optimization recommendations — delivered qualified leads at <€150 CPL (Romania) and ~$90 CPL (UK), outperforming benchmarked acquisition costs.",
+      "Leads and mentors a team of 5 specialists across paid media planning, execution and reporting.",
     ],
   },
   {
@@ -86,6 +87,7 @@ const experience = [
       "Developed digital media strategy: Google Ads, remarketing, SEO, EDMs and website updates.",
       "Evaluated brand website performance and advised on promotion and web presence.",
       "Executed paid social across Facebook, Instagram, LinkedIn, Twitter and YouTube.",
+      "Diagnosed that the hotel's guest Wi-Fi login was redirecting in-house guests to the website homepage, inflating bounce rate and masking true performance; fixed the redirect, lifting website conversion rate by 12%+ within a year.",
     ],
   },
   {
@@ -135,7 +137,7 @@ const impact: { k: string; v: string; highlight?: boolean }[] = [
   { k: "$35K+", v: "Monthly media budget, hospitality brand", highlight: true },
   { k: "€500K+", v: "Annual media budget, Capgemini EU" },
   { k: "10–15%", v: "ROAS uplift, hospitality" },
-  { k: "$500K+", v: "Room revenue growth, Capella", highlight: true },
+  { k: "$1.05M", v: "Direct booking revenue, Capella", highlight: true },
   { k: "<€150", v: "LinkedIn Lead Gen CPL" },
 ];
 
@@ -211,7 +213,7 @@ function Index() {
             <a href="#contact" className="hover:text-ink">Contact</a>
           </nav>
           <a
-            href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
+            href="mailto:manan.gupta@manandigitalexpert.com?subject=Intro%20call%20request"
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-foreground transition hover:bg-accent/90"
@@ -228,7 +230,7 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="mb-6 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-ink-muted reveal">
               <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-              Available for new mandates — Q3 2026
+              Open to new roles & mandates
             </div>
             <h1
               className="font-display text-5xl leading-[0.95] tracking-tight text-ink sm:text-7xl lg:text-[7.5rem] reveal"
@@ -261,7 +263,7 @@ function Index() {
                 <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
+                href="mailto:manan.gupta@manandigitalexpert.com?subject=Intro%20call%20request"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-hairline px-5 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-ink hover:border-ink"
@@ -554,7 +556,7 @@ function Index() {
       {/* EXPERIENCE */}
       <section id="experience" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="04 / Experience" title="Twelve years, six companies, four countries." />
+          <SectionLabel n="04 / Experience" title="Twelve years, six companies, three countries." />
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -662,7 +664,7 @@ function Index() {
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="https://outlook.live.com/mail/0/deeplink/compose?to=manan.gupta@manandigitalexpert.com&subject=Intro%20call%20request"
+                href="mailto:manan.gupta@manandigitalexpert.com?subject=Intro%20call%20request"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[11px] uppercase tracking-[0.24em] text-accent-foreground transition hover:bg-ink hover:text-background"
@@ -732,8 +734,8 @@ function Index() {
                 Currently
               </div>
               <p className="mt-3 font-display text-lg text-ink">
-                Leading digital at Capella Hotels & Resorts, Bangkok — while
-                managing global performance media for Capgemini across Europe.
+                Driving paid media for Capella Hotels & Resorts, Bangkok — while
+                leading global media planning for Capgemini across Europe.
               </p>
             </div>
           </aside>
