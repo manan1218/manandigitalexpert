@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Pause,
   Play,
@@ -10,7 +11,7 @@ import {
 
 export function HeroVideo({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -34,7 +35,7 @@ export function HeroVideo({ src }: { src: string }) {
   const togglePlay = () => {
     const v = ref.current;
     if (!v) return;
-    if (v.paused) v.play();
+    if (v.paused) void v.play().catch(() => setPlaying(false));
     else v.pause();
   };
   const stop = () => {
@@ -71,18 +72,17 @@ export function HeroVideo({ src }: { src: string }) {
       <video
         ref={ref}
         src={src}
-        autoPlay
+        poster="/assets/video/intro-poster.jpg"
         muted
         loop
         playsInline
         preload="metadata"
-        onClick={togglePlay}
-        className="absolute inset-0 h-full w-full object-cover cursor-pointer"
+        className="absolute inset-0 h-full w-full object-cover"
         style={{ objectPosition: "center center" }}
       />
 
       {/* Controls overlay */}
-      <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-background/90 via-background/60 to-transparent">
         <input
           type="range"
           min={0}
@@ -90,10 +90,10 @@ export function HeroVideo({ src }: { src: string }) {
           step={0.1}
           value={progress}
           onChange={onScrub}
-          className="w-full h-1 accent-white cursor-pointer"
+          className="w-full h-1 accent-ink cursor-pointer"
           aria-label="Seek"
         />
-        <div className="mt-2 flex items-center justify-between gap-2 text-white">
+        <div className="mt-2 flex items-center justify-between gap-2 text-ink">
           <div className="flex items-center gap-1.5">
             <IconBtn onClick={() => seek(-5)} label="Rewind 5s">
               <Rewind className="h-4 w-4" />
@@ -106,7 +106,7 @@ export function HeroVideo({ src }: { src: string }) {
               )}
             </IconBtn>
             <IconBtn onClick={stop} label="Stop">
-              <span className="block h-3 w-3 bg-white" />
+              <span className="block h-3 w-3 bg-ink" />
             </IconBtn>
             <IconBtn onClick={() => seek(5)} label="Forward 5s">
               <FastForward className="h-4 w-4" />
@@ -135,13 +135,16 @@ function IconBtn({
   children: React.ReactNode;
 }) {
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
+      size="icon"
       onClick={onClick}
       aria-label={label}
-      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/25 transition-colors"
+      title={label}
+      className="h-8 w-8 rounded-full bg-ink/10 text-ink backdrop-blur-sm hover:bg-ink/25 hover:text-ink"
     >
       {children}
-    </button>
+    </Button>
   );
 }
