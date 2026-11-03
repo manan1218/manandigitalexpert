@@ -17,7 +17,7 @@ async def main():
                 assert await video.evaluate("v => !v.autoplay && v.paused && v.currentTime === 0")
                 poster = await video.get_attribute("poster")
                 assert poster
-                assert (await page.request.get(poster)).ok
+                assert (await page.request.get("http://localhost:8080" + poster)).ok
                 container = video.locator("..")
                 play = container.get_by_role("button", name="Play", exact=True)
                 assert await play.is_visible()
