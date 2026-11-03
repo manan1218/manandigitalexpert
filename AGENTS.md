@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep video playback in HeroVideo with a local poster extracted from the original media and explicit visitor-operated controls, so desktop and mobile share the same non-autoplay behavior.

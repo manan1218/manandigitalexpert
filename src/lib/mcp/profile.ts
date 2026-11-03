@@ -24,7 +24,7 @@ export const impact = [
 ];
 
 export const capabilities = [
-  { name: "Paid Media & Acquisition", desc: "Google Ads · Meta Ads · LinkedIn Ads" },
+  { name: "Paid Media & Acquisition", desc: "Google Ads · Meta Ads · LinkedIn Ads · ChatGPT Ads" },
   { name: "Demand Generation", desc: "Building qualified B2B pipeline" },
   { name: "Analytics & Measurement", desc: "GA4 · GTM · Conversion Tracking" },
   { name: "Media Investment Optimisation", desc: "Improving ROAS · CPL · Budget Efficiency" },
@@ -72,6 +72,7 @@ export const experience = [
       "Partners with Revenue on geo-level insights to sharpen targeting across top source markets.",
       "Optimizes full-funnel campaigns (Search, Display, PMAX, YouTube, Meta) — increasing direct bookings, reducing OTA reliance.",
       "Leads Meta/IG social advertising for Capella Bangkok and its F&B outlets.",
+      "Early adopter of ChatGPT Ads: launched campaigns live in the US, UK, Germany and other markets.",
     ],
   },
   {

@@ -22,6 +22,16 @@ const capabilityIconMap = {
 } as const;
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Manan Gupta | Growth & Performance Marketing Leader" },
+      { name: "description", content: "Manan Gupta’s growth and performance marketing portfolio: paid media, hospitality, enterprise demand generation and measurable business impact." },
+      { property: "og:title", content: "Manan Gupta | Growth & Performance Marketing Leader" },
+      { property: "og:description", content: "Explore Manan Gupta’s experience, paid-media expertise and growth marketing case studies." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
@@ -52,6 +62,7 @@ const experience = [
       "Partners with Revenue on geo-level insights to sharpen targeting across top source markets.",
       "Optimizes full-funnel campaigns (Search, Display, PMAX, YouTube, Meta) — increasing direct bookings, reducing OTA reliance.",
       "Leads Meta/IG social advertising for Capella Bangkok and its F&B outlets.",
+      "Early adopter of ChatGPT Ads: launched campaigns live in the US, UK, Germany and other markets.",
     ],
   },
   {
@@ -155,7 +166,7 @@ const capabilities = [
   {
     n: "01",
     name: "Paid Media & Acquisition",
-    desc: "Google Ads · Meta Ads · LinkedIn Ads",
+    desc: "Google Ads · Meta Ads · LinkedIn Ads · ChatGPT Ads",
     Icon: "paid",
   },
   {
