@@ -41,7 +41,7 @@ export const caseStudies: CaseStudy[] = [
         heading: "The Challenge",
         kind: "paragraphs",
         body: [
-          "As Digital Marketing Manager for an ultra-luxury hotel in Bangkok, a 101-key ultra-luxury property, I managed a monthly paid media portfolio of approximately $35K across Google Search, Performance Max, Display and Meta campaigns targeting multiple international markets.",
+          "As Freelance Digital Marketing Manager for Capella Bangkok, a 101-key ultra-luxury property, I managed a monthly paid media portfolio of approximately $35K across Google Search, Performance Max, Display and Meta campaigns targeting multiple international markets.",
           "During one of our planning cycles, we faced a common business challenge:",
         ],
       },

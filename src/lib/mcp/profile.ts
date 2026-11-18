@@ -54,18 +54,18 @@ export const certifications = [
 export const companies = [
   { name: "Capella Hotels & Resorts", location: "Bangkok" },
   { name: "Millennium Hotels", location: "Abu Dhabi" },
-  { name: "Watermark Marketing Agency", location: "Dubai" },
+  { name: "Watermark Marketing Management", location: "Dubai" },
   { name: "Capgemini", location: "Europe" },
   
   { name: "Sprinklr", location: "India" },
-  { name: "Publicis (Sapient Razorfish)", location: "India" },
+  { name: "Publicis Sapient (formerly Sapient Razorfish)", location: "India" },
 ];
 
 export const experience = [
   {
     company: "Capella Hotels & Resorts",
     location: "Bangkok",
-    role: "Freelance Digital Marketing Consultant",
+    role: "Freelance Digital Marketing Manager",
     period: "Dec 2023 — Present",
     bullets: [
       "Manages $35K+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
@@ -77,7 +77,7 @@ export const experience = [
   },
   {
     company: "Capgemini India",
-    location: "Gurugram",
+    location: "GURUGRAM · EUROPEAN MARKETS",
     role: "Team Manager — Digital Marketing",
     period: "Jan 2022 — Present",
     bullets: [
@@ -100,7 +100,7 @@ export const experience = [
     ],
   },
   {
-    company: "Grand Millennium Al Wahda",
+    company: "Grand Millennium Al Wahda · Millennium Hotels",
     location: "Abu Dhabi",
     role: "E-Commerce Specialist",
     period: "Aug 2018 — Jul 2020",
@@ -112,7 +112,7 @@ export const experience = [
     ],
   },
   {
-    company: "Sapient Razorfish",
+    company: "Publicis Sapient (formerly Sapient Razorfish)",
     location: "India",
     role: "Social Media Community Manager",
     period: "Jun 2017 — Aug 2018",
@@ -129,6 +129,16 @@ export const experience = [
     bullets: [
       "Developed and managed social campaigns across Facebook, Twitter, Instagram and YouTube.",
       "Built client audience-profile databases and reported campaign impact via the Sprinklr platform.",
+    ],
+  },
+  {
+    company: "Strategic Outsourcing Services",
+    location: "India",
+    role: "Business Development Executive",
+    period: "Feb 2014 — Jun 2015",
+    bullets: [
+      "Generated new business leads through targeted outreach, identifying and engaging key decision-makers across industries.",
+      "Prospected and built relationships with decision-makers on LinkedIn, an early foundation for later B2B demand generation work.",
     ],
   },
 ];

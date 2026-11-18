@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Download, Linkedin, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { HeroVideo } from "@/components/HeroVideo";
 import { CaseStudyModal } from "@/components/CaseStudyModal";
 import { CoreContributions } from "@/components/CoreContributions";
@@ -55,7 +56,7 @@ const experience = [
   {
     company: "Capella Hotels & Resorts",
     location: "Bangkok",
-    role: "Freelance Digital Marketing Consultant",
+    role: "Freelance Digital Marketing Manager",
     period: "Dec 2023 — Present",
     bullets: [
       "Manages $35K+ monthly digital budget across Google, Meta and programmatic — driving 10–15% ROAS uplift.",
@@ -67,7 +68,7 @@ const experience = [
   },
   {
     company: "Capgemini India",
-    location: "Gurugram",
+    location: "GURUGRAM · EUROPEAN MARKETS",
     role: "Team Manager — Digital Marketing",
     period: "Jan 2022 — Present",
     bullets: [
@@ -90,7 +91,7 @@ const experience = [
     ],
   },
   {
-    company: "Grand Millennium Al Wahda",
+    company: "Grand Millennium Al Wahda · Millennium Hotels",
     location: "Abu Dhabi",
     role: "E-Commerce Specialist",
     period: "Aug 2018 — Jul 2020",
@@ -102,7 +103,7 @@ const experience = [
     ],
   },
   {
-    company: "Sapient Razorfish",
+    company: "Publicis Sapient (formerly Sapient Razorfish)",
     location: "India",
     role: "Social Media Community Manager",
     period: "Jun 2017 — Aug 2018",
@@ -119,6 +120,16 @@ const experience = [
     bullets: [
       "Developed and managed social campaigns across Facebook, Twitter, Instagram and YouTube.",
       "Built client audience-profile databases and reported campaign impact via the Sprinklr platform.",
+    ],
+  },
+  {
+    company: "Strategic Outsourcing Services",
+    location: "India",
+    role: "Business Development Executive",
+    period: "Feb 2014 — Jun 2015",
+    bullets: [
+      "Generated new business leads through targeted outreach, identifying and engaging key decision-makers across industries.",
+      "Prospected and built relationships with decision-makers on LinkedIn, an early foundation for later B2B demand generation work.",
     ],
   },
 ];
@@ -155,11 +166,11 @@ const impact: { k: string; v: string; highlight?: boolean }[] = [
 const companies: { name: string; location?: string }[] = [
   { name: "Capella Hotels & Resorts", location: "Bangkok" },
   { name: "Millennium Hotels", location: "Abu Dhabi" },
-  { name: "Watermark Marketing Agency", location: "Dubai" },
+  { name: "Watermark Marketing Management", location: "Dubai" },
   { name: "Capgemini", location: "Europe" },
   
   { name: "Sprinklr", location: "India" },
-  { name: "Publicis (Sapient Razorfish)", location: "India" },
+  { name: "Publicis Sapient (formerly Sapient Razorfish)", location: "India" },
 ];
 
 const capabilities = [
@@ -205,6 +216,7 @@ const markets = [
 /* ---------- Page ---------- */
 function Index() {
   const [openStudy, setOpenStudy] = useState<CaseStudy | null>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
@@ -223,6 +235,18 @@ function Index() {
             <a href="#certifications" className="hover:text-ink">Certs</a>
             <a href="#contact" className="hover:text-ink">Contact</a>
           </nav>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="h-10 w-10 md:hidden"
+            aria-label={mobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMobileNavOpen((open) => !open)}
+          >
+            {mobileNavOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
           <a
             href="mailto:manan.gupta@manandigitalexpert.com?subject=Intro%20call%20request"
             target="_blank"
@@ -233,6 +257,18 @@ function Index() {
             <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>
+        {mobileNavOpen ? (
+          <nav
+            id="mobile-navigation"
+            className="grid grid-cols-2 gap-x-6 gap-y-4 border-t border-hairline px-6 py-4 font-mono text-xs uppercase tracking-[0.2em] text-ink-muted md:hidden"
+          >
+            <a href="#work" onClick={() => setMobileNavOpen(false)} className="hover:text-ink">Work</a>
+            <a href="#impact" onClick={() => setMobileNavOpen(false)} className="hover:text-ink">Impact</a>
+            <a href="#experience" onClick={() => setMobileNavOpen(false)} className="hover:text-ink">Experience</a>
+            <a href="#certifications" onClick={() => setMobileNavOpen(false)} className="hover:text-ink">Certs</a>
+            <a href="#contact" onClick={() => setMobileNavOpen(false)} className="hover:text-ink">Contact</a>
+          </nav>
+        ) : null}
       </header>
 
       {/* HERO */}
@@ -294,7 +330,7 @@ function Index() {
 
           {/* Portrait/Video container */}
           <div className="lg:col-span-5">
-            <div className="relative reveal" style={{ animationDelay: "220ms" }}>
+            <div className="relative mx-auto w-full max-w-[520px] reveal" style={{ animationDelay: "220ms" }}>
               <HeroVideo src="/assets/video/intro.mp4" />
               <div className="absolute -bottom-4 -left-4 hidden rounded-md border border-hairline bg-surface-2 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted sm:block">
                 REEL / INTRO
@@ -315,49 +351,8 @@ function Index() {
               </span>
             </div>
 
-            {/* Row 1: 3 companies */}
-            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              {companies.slice(0, 3).map((c) => (
-                <div
-                  key={c.name}
-                  className="group border-t border-hairline pt-6 transition"
-                >
-                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
-                    {c.name}
-                  </div>
-                  {c.location ? (
-                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
-                      {c.location}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-
-            {/* Row 2: 2 companies, centered on desktop */}
-            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="hidden lg:block" aria-hidden />
-              {companies.slice(3, 5).map((c) => (
-                <div
-                  key={c.name}
-                  className="group border-t border-hairline pt-6 transition"
-                >
-                  <div className="font-display text-2xl leading-tight text-ink-muted transition group-hover:text-ink sm:text-3xl">
-                    {c.name}
-                  </div>
-                  {c.location ? (
-                    <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.24em] text-ink-muted">
-                      {c.location}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-
-            {/* Row 3: 2 companies, centered on desktop */}
-            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="hidden lg:block" aria-hidden />
-              {companies.slice(5, 7).map((c) => (
+            <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2">
+              {companies.map((c) => (
                 <div
                   key={c.name}
                   className="group border-t border-hairline pt-6 transition"
@@ -381,11 +376,11 @@ function Index() {
       <section id="impact" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
           <SectionLabel n="01 / Impact" title="Business impact, in real numbers." />
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline min-[430px]:grid-cols-2 md:grid-cols-3">
             {impact.map((i) => (
-              <div key={i.v} className="group relative bg-background p-8 transition hover:bg-surface">
+              <div key={i.v} className="group relative bg-background p-4 transition hover:bg-surface sm:p-8">
                 <div
-                  className={`font-display text-5xl transition sm:text-6xl ${
+                  className={`font-display text-[clamp(1.4rem,7.6vw,2rem)] leading-none transition sm:text-5xl lg:text-6xl ${
                     i.highlight ? "text-accent" : "text-ink"
                   }`}
                 >
@@ -412,13 +407,13 @@ function Index() {
             Core capabilities
           </div>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-hairline bg-hairline sm:grid-cols-2">
             {capabilities.map((c, idx) => {
               const Icon = capabilityIconMap[c.Icon];
               return (
                 <div
                   key={c.n}
-                  className="group relative bg-background p-8 transition hover:bg-surface reveal"
+                  className={`group relative bg-background p-8 transition hover:bg-surface reveal ${c.n === "05" ? "sm:col-span-2" : ""}`}
                   style={{ animationDelay: `${idx * 90}ms` }}
                 >
                   <div className="mb-6 flex items-center justify-between">
@@ -567,7 +562,7 @@ function Index() {
       {/* EXPERIENCE */}
       <section id="experience" className="border-b border-hairline">
         <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10 lg:py-28">
-          <SectionLabel n="04 / Experience" title="Twelve years, six companies, three countries." />
+          <SectionLabel n="04 / Experience" title="Twelve years, seven companies, three countries." />
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             <div className="lg:col-span-4">
