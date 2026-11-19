@@ -67,7 +67,7 @@ export function HeroVideo({ src }: { src: string }) {
   return (
     <div
       className="relative w-full overflow-hidden rounded-lg border border-hairline bg-surface group"
-      style={{ aspectRatio: "720 / 820" }}
+      style={{ aspectRatio: "4 / 5" }}
     >
       <video
         ref={ref}
@@ -77,7 +77,7 @@ export function HeroVideo({ src }: { src: string }) {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain"
         style={{ objectPosition: "center center" }}
       />
 
